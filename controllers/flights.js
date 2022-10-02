@@ -1,3 +1,4 @@
+const Flight = ('../models/flight')
 module.exports = {
   index,
   create,

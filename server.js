@@ -8,6 +8,8 @@ var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
 
 var app = express();
+// Start Mongo Connection
+require('./config/databse')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

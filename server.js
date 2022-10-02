@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
+const methodOverride = require('method-override')
 
 var app = express();
 // Start Mongo Connection
@@ -20,6 +21,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
+
 
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);

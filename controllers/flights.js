@@ -7,8 +7,13 @@ module.exports = {
   new: newFlight,
 };
 
-function index(req, res) {}
-function newFlight(req, res) {}
+function index(req, res) {
+
+}
+function newFlight(req, res) {
+  res.render('flights/new')
+
+}
 
 function deleteFlight(req, res) {}
 

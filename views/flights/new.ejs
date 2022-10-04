@@ -10,7 +10,9 @@
                     <div class="container ">
 
                         <label class="margin-right-5" for="airLine">Select Airline</label><br>
-                        <select name="airline" id="">
+                        <select required name="airline" id="">
+                            <option selected disabled value="">Choose an airline</option>
+
                             <% ['American', 'Southwest' , 'United' ].forEach(airline=> {%>
                                 <option value="<%= airline %> ">
                                     <%= airline %>
@@ -22,6 +24,7 @@
 
                         <label for="airport">Select Airport</label><br>
                         <select name="airport" id="">
+                            <option selected disabled value="">Choose an airport</option>
                             <% ['AUS', 'DFW' , 'DEN' , 'LAX' , 'SAN' ].forEach((airport)=>{%>
                                 <option value="<%= airport %> ">
                                     <%= airport %>

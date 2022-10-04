@@ -1,4 +1,4 @@
-const Flight = ('../models/flight')
+const Flight = require('../models/flight');
 module.exports = {
   index,
   create,
@@ -8,15 +8,27 @@ module.exports = {
 };
 
 function index(req, res) {
-
+  
+  res.render('flights')
 }
 function newFlight(req, res) {
-  res.render('flights/new')
-
+  res.render('flights/new');
 }
 
 function deleteFlight(req, res) {}
 
 function show(req, res) {}
 function update(req, res) {}
-function create(req, res) {}
+
+function create(req, res) {
+  const newFlight = new Flight();
+  if(req.body.airport) newFlight.airport=req.body.airport
+  if(req.body.depaarts) newFlight.departs=req.body.depaarts
+  newFlight.flightNo=req.body.flightNo
+  newFlight.airline=req.body.airline
+  newFlight.save
+
+
+  console.log(newFlight);
+  res.redirect('/flights');
+}

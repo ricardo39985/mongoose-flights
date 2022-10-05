@@ -8,8 +8,10 @@ module.exports = {
 };
 
 function index(req, res) {
-  
-  res.render('flights')
+  Flight.find({}, (err, flights) => {
+    console.log(flights);
+    res.render('flights',{flights});
+  });
 }
 function newFlight(req, res) {
   res.render('flights/new');
@@ -22,12 +24,11 @@ function update(req, res) {}
 
 function create(req, res) {
   const newFlight = new Flight();
-  if(req.body.airport) newFlight.airport=req.body.airport
-  if(req.body.depaarts) newFlight.departs=req.body.depaarts
-  newFlight.flightNo=req.body.flightNo
-  newFlight.airline=req.body.airline
-  newFlight.save
-
+  if (req.body.airport) newFlight.airport = req.body.airport;
+  if (req.body.depaarts) newFlight.departs = req.body.depaarts;
+  newFlight.flightNo = req.body.flightNo;
+  newFlight.airline = req.body.airline;
+  newFlight.save();
 
   console.log(newFlight);
   res.redirect('/flights');

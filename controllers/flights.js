@@ -13,7 +13,7 @@ function index(req, res) {
   });
 }
 function newFlight(req, res) {
-  res.render('flights/new');
+  res.render('flights/new', { defaultDepartDate: new Flight().departs});
 }
 
 function deleteFlight(req, res) {}
@@ -23,8 +23,8 @@ function update(req, res) {}
 
 function create(req, res) {
   const newFlight = new Flight();
-  if (req.body.airport) newFlight.airport = req.body.airport;
-  if (req.body.depaarts) newFlight.departs = req.body.depaarts;
+  if (!req.body.airport) newFlight.airport = req.body.airport;
+  if (!req.body.depaarts) newFlight.departs = new Date(req.body.departs);
   newFlight.flightNo = req.body.flightNo;
   newFlight.airline = req.body.airline;
   newFlight.save();

@@ -9,7 +9,7 @@
       <h5 class="card-title">Airline: <span>
           <%= flight.airline %>
         </span></h5>
-      <p class="card-text">Departs: <%= flight.departs.toLocaleDateString('en-us', {
+      <p class="card-text <%= flight.departs > new Date() ?  'text-success' : 'text-danger'%>">Departs: <%= flight.departs.toLocaleDateString('en-us', {
                     weekday:"long", year:"numeric", month:"short", day:"numeric"}) %>
       </p>
       <p class="card-text">

@@ -8,12 +8,14 @@ module.exports = {
 };
 
 function index(req, res) {
-  Flight.find({}, (err, flights) => {
-    res.render('flights', { flights });
-  });
+  Flight.find({})
+    .sort('departs')
+    .exec((err, flights) => {
+      res.render('flights', { flights });
+    });
 }
 function newFlight(req, res) {
-  res.render('flights/new', { defaultDepartDate: new Flight().departs});
+  res.render('flights/new', { defaultDepartDate: new Flight().departs });
 }
 
 function deleteFlight(req, res) {}

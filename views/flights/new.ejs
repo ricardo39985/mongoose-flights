@@ -1,4 +1,7 @@
 <%- include('../partials/style') %>
+<%- include('../partials/nav') %>
+
+
 
     <body>
         <div id="container" class="">
@@ -14,7 +17,7 @@
                             <option selected disabled value="">Choose an airline</option>
 
                             <% ['American', 'Southwest' , 'United' ].forEach(airline=> {%>
-                                <option value="<%= airline %> ">
+                                <option value="<%= airline %>">
                                     <%= airline %>
                                 </option>
                                 <% }); %>
@@ -26,7 +29,7 @@
                         <select name="airport" id="">
                             <option selected disabled value="">Choose an airport</option>
                             <% ['AUS', 'DFW' , 'DEN' , 'LAX' , 'SAN' ].forEach((airport)=>{%>
-                                <option value="<%= airport %> ">
+                                <option value="<%= airport %>">
                                     <%= airport %>
                                 </option>
                                 <% }) %>

@@ -9,8 +9,7 @@ module.exports = {
 
 function index(req, res) {
   Flight.find({}, (err, flights) => {
-    console.log(flights);
-    res.render('flights',{flights});
+    res.render('flights', { flights });
   });
 }
 function newFlight(req, res) {
@@ -29,7 +28,5 @@ function create(req, res) {
   newFlight.flightNo = req.body.flightNo;
   newFlight.airline = req.body.airline;
   newFlight.save();
-
-  console.log(newFlight);
   res.redirect('/flights');
 }

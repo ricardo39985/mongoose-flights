@@ -1,0 +1,24 @@
+<div class="col mt-2">
+  <div class="card">
+    <div class="card-header">
+      Flight Number: <span>
+        <%= flight.flightNo %>
+      </span>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Airline: <span>
+          <%= flight.airline %>
+        </span></h5>
+      <p class="card-text">Departs: <%= flight.departs.toLocaleDateString('en-us', {
+                    weekday:"long", year:"numeric", month:"short", day:"numeric"}) %>
+      </p>
+      <p class="card-text">
+        Airport: <span>
+          <%= flight.airport %>
+        </span>
+      </p>
+      <a href="/flights/<%= flight._id %> " class="btn btn-primary">View</a>
+      <a href="/flights/<%= flight._id %> " class="btn btn-primary">Edit</a>
+    </div>
+  </div>
+</div>

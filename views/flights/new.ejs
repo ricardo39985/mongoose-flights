@@ -1,8 +1,6 @@
 <%- include('../partials/style') %>
 <%- include('../partials/nav') %>
 
-
-
 <body>
   <div id="container" class="">
     <div>
@@ -21,18 +19,6 @@
               <%= airline %>
             </option>
             <% }); %>
-          </select>
-        </div>
-        <div class="container">
-
-          <label for="airport">Select Airport</label><br>
-          <select name="airport" id="">
-            <option selected disabled value="">Choose an airport</option>
-            <% ['AUS', 'DFW' , 'DEN' , 'LAX' , 'SAN' ].forEach((airport)=>{%>
-            <option value="<%= airport %>">
-              <%= airport %>
-            </option>
-            <% }) %>
           </select>
         </div>
         <div class="container">

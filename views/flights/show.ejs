@@ -1,0 +1,21 @@
+<%- include('../partials/style') %>
+<%- include('../partials/nav') %>
+<div class="m-auto" style="width: 40%;">
+  <div class="card-group">
+    <div class="card mb-4">
+      <div class="view overlay">
+        <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/49.webp" alt="Card image cap">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Fligth with <%= flight.airline %> </h4>
+        <p class="card-text <%= flight.departs > new Date() ?  'text-success' : 'text-danger'%>">Departs: <%= flight.departs.toLocaleDateString('en-us', {
+            weekday:"long", year:"numeric", month:"short", day:"numeric"}) %>
+        </p>
+      </div>
+      <%- include('../partials/destinations/new',{flight}) %>
+    </div>
+  </div>
+</div>

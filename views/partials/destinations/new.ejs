@@ -1,0 +1,29 @@
+<div class="" style="width: 60%; margin-left: 12px;">
+  <form class="d-flex flex-column" action="/flights/<%= flight._id %>/destinations" method="post">
+    <div class="d-flex text-center justify-content-between">
+      <div>
+        <label for="airport">Select Airport</label><br>
+        <select class="form-control form-control-md" name="airport" id="">
+          <option selected disabled value="">Choose an airport</option>
+          <% ['AUS', 'DFW' , 'DEN' , 'LAX' , 'SAN' ].forEach((airport)=>{%>
+          <option value="<%= airport %>">
+            <%= airport %>
+          </option>
+          <% }) %>
+        </select>
+      </div>
+      <div>
+        <label for="departs">Departs</label><br>
+        <input class="form-control form-control-md" type="datetime-local" name="departs" id=""><br>
+        <div class="text-left">
+
+          <span><small>Default: <%= defaultDepartDate.toLocaleDateString('en-us', {
+            weekday:"long", year:"numeric", month:"short", day:"numeric"}) %> </small></span>
+        </div>
+      </div>
+    </div>
+    <div style="width: 40%;">
+      <button type="submit" class=" mt-4 btn btn-primary btn-md">Add Destination</button>
+    </div>
+  </form>
+</div>

@@ -19,6 +19,9 @@
         </div>
       </div>
       <%- include('../partials/destinations/new',{flight}) %>
+      <div style="width: 25%; margin-left: 12px;" class="d-flex mb-4">
+        <a href=<%=`/flights/${flight._id}/tickets/new`%>><button class="btn btn-primary">Add ticket</button></a>
+      </div>
     </div>
   </div>
 </div>

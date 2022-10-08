@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var flightsRouter = require('./routes/flights');
 const destinationsRouter = require('./routes/destinations');
+const ticketsRouter = require('./routes/tickets');
 const methodOverride = require('method-override');
 
 var app = express();
@@ -31,6 +32,7 @@ app.use(methodOverride('_method'));
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
 app.use('/', destinationsRouter);
+app.use('/', ticketsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

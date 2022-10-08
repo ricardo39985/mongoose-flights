@@ -1,0 +1,23 @@
+<h3>Destinations</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Airport</th>
+      <th scope="col">Arrival Date</th>
+      <th scope="col">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let i = 0; i < flight.destinations.sort().reverse().length; i++) {%>
+    <%const destination = flight.destinations[i];%>
+    <tr>
+      <th scope="row"><%= i+1 %> </th>
+      <td><%= destination.airport %> </td>
+      <td><%= destination.arrival ? destination.arrival.toLocaleDateString('en-us', {
+                  weekday:"long", year:"numeric", month:"short", day:"numeric"}) : `Not Provided` %> </td>
+      <td>X</td>
+    </tr>
+    <%  } %>
+  </tbody>
+</table>

@@ -14,6 +14,9 @@
         <p class="card-text <%= flight.departs > new Date() ?  'text-success' : 'text-danger'%>">Departs: <%= flight.departs.toLocaleDateString('en-us', {
             weekday:"long", year:"numeric", month:"short", day:"numeric"}) %>
         </p>
+        <div>
+          <%- include('../partials/destinations/destinationTable',{flight}) %>
+        </div>
       </div>
       <%- include('../partials/destinations/new',{flight}) %>
     </div>

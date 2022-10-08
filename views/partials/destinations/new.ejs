@@ -3,7 +3,7 @@
     <div class="d-flex text-center justify-content-between">
       <div>
         <label for="airport">Select Airport</label><br>
-        <select class="form-control form-control-md" name="airport" id="">
+        <select required class="form-control form-control-md" name="airport" id="">
           <option selected disabled value="">Choose an airport</option>
           <% ['AUS', 'DFW' , 'DEN' , 'LAX' , 'SAN' ].forEach((airport)=>{%>
           <option value="<%= airport %>">
@@ -13,8 +13,8 @@
         </select>
       </div>
       <div>
-        <label for="departs">Departs</label><br>
-        <input class="form-control form-control-md" type="datetime-local" name="departs" id=""><br>
+        <label for="arrival">Arrival</label><br>
+        <input class="form-control form-control-md" type="datetime-local" name="arrival" id=""><br>
         <div class="text-left">
 
           <span><small>Default: <%= defaultDepartDate.toLocaleDateString('en-us', {
